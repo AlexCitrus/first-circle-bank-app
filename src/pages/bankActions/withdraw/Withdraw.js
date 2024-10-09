@@ -53,9 +53,8 @@ const Withdraw = () => {
             <InputNumber
               value={amount}
               onChange={setAmount}
-              step={0.01}
+              step={1}
               min={0}
-              max={accountBalance}
               className="withdraw-input"
             />
           </Form.Group>
