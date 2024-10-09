@@ -1,6 +1,6 @@
 # React Banking Application
 
-This project is a simple banking application built with React. It allows users to perform basic banking operations such as depositing, withdrawing, and transferring money.
+This project is a simple banking application built with React. It allows users to perform basic banking operations such as depositing, withdrawing, and transferring money. The layout is simple and will be designed properly if needed.
 
 ## Features
 
@@ -10,6 +10,7 @@ This project is a simple banking application built with React. It allows users t
 - Withdraw money
 - Transfer money to other users
 - Responsive design
+- Simple layout (to be properly designed if needed)
 
 ## Technologies Used
 
