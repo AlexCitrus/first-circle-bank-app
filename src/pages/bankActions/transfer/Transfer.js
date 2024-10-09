@@ -5,7 +5,7 @@ import { useAuth } from "../../../context/AuthContext";
 import { FlexboxGrid, Panel, Button, Form, InputNumber, Input } from "rsuite";
 import "./transfer.css";
 
-const transferCopy = {
+const copy = {
   title: "Transfer",
   currentBalance: "Current Balance:",
   recipientEmail: "Recipient Email",
@@ -29,32 +29,32 @@ const Transfer = () => {
 
   const handleTransfer = () => {
     if (amount <= 0) {
-      alert(transferCopy.invalidAmountAlert);
+      alert(copy.invalidAmountAlert);
       return;
     }
     if (amount > accountBalance) {
-      alert(transferCopy.insufficientFundsAlert);
+      alert(copy.insufficientFundsAlert);
       return;
     }
     if (!recipientEmail) {
-      alert(transferCopy.emptyRecipientAlert);
+      alert(copy.emptyRecipientAlert);
       return;
     }
     if (recipientEmail === currentEmail) {
-      alert(transferCopy.selfTransferAlert);
+      alert(copy.selfTransferAlert);
       return;
     }
 
     const recipientExists = users.some((user) => user.email === recipientEmail);
 
     if (!recipientExists) {
-      alert(transferCopy.nonExistentRecipientAlert);
+      alert(copy.nonExistentRecipientAlert);
       return;
     }
 
     try {
       transfer(recipientEmail, amount);
-      alert(transferCopy.successAlert(amount, recipientEmail));
+      alert(copy.successAlert(amount, recipientEmail));
       navigate("/dashboard");
     } catch (error) {
       alert(error.message);
@@ -64,9 +64,9 @@ const Transfer = () => {
   return (
     <FlexboxGrid justify="center" align="middle" className="transfer-container">
       <Panel bordered className="transfer-panel">
-        <h2 className="transfer-title">{transferCopy.title}</h2>
+        <h2 className="transfer-title">{copy.title}</h2>
         <div className="transfer-balance">
-          {transferCopy.currentBalance} ₱
+          {copy.currentBalance} ₱
           {accountBalance.toLocaleString("en-PH", {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2
@@ -74,7 +74,7 @@ const Transfer = () => {
         </div>
         <Form fluid onSubmit={handleTransfer}>
           <Form.Group>
-            <Form.ControlLabel>{transferCopy.recipientEmail}</Form.ControlLabel>
+            <Form.ControlLabel>{copy.recipientEmail}</Form.ControlLabel>
             <Input
               value={recipientEmail}
               onChange={setRecipientEmail}
@@ -83,7 +83,7 @@ const Transfer = () => {
             />
           </Form.Group>
           <Form.Group>
-            <Form.ControlLabel>{transferCopy.amountToTransfer}</Form.ControlLabel>
+            <Form.ControlLabel>{copy.amountToTransfer}</Form.ControlLabel>
             <InputNumber
               value={amount}
               onChange={setAmount}
@@ -100,7 +100,7 @@ const Transfer = () => {
             size="lg"
             className="transfer-button"
           >
-            {transferCopy.transferButton}
+            {copy.transferButton}
           </Button>
           <Button
             appearance="subtle"
@@ -109,7 +109,7 @@ const Transfer = () => {
             onClick={() => navigate("/dashboard")}
             className="back-button"
           >
-            {transferCopy.backToDashboard}
+            {copy.backToDashboard}
           </Button>
         </Form>
       </Panel>

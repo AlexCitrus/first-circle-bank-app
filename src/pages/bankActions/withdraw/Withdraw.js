@@ -4,7 +4,7 @@ import { useBankAccount } from "../../../context/BankAccountContext";
 import { FlexboxGrid, Panel, Button, Form, InputNumber } from "rsuite";
 import "./withdraw.css";
 
-const withdrawCopy = {
+const copy = {
   title: "Withdraw",
   currentBalance: "Current Balance:",
   amountToWithdraw: "Amount to Withdraw",
@@ -22,24 +22,24 @@ const Withdraw = () => {
 
   const handleWithdraw = () => {
     if (amount <= 0) {
-      alert(withdrawCopy.invalidAmountAlert);
+      alert(copy.invalidAmountAlert);
       return;
     }
     if (amount > accountBalance) {
-      alert(withdrawCopy.insufficientFundsAlert);
+      alert(copy.insufficientFundsAlert);
       return;
     }
     withdraw(amount);
-    alert(withdrawCopy.successAlert(amount));
+    alert(copy.successAlert(amount));
     navigate("/dashboard");
   };
 
   return (
     <FlexboxGrid justify="center" align="middle" className="withdraw-container">
       <Panel bordered className="withdraw-panel">
-        <h2 className="withdraw-title">{withdrawCopy.title}</h2>
+        <h2 className="withdraw-title">{copy.title}</h2>
         <div className="withdraw-balance">
-          {withdrawCopy.currentBalance} ₱
+          {copy.currentBalance} ₱
           {accountBalance.toLocaleString("en-PH", {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2
@@ -47,9 +47,7 @@ const Withdraw = () => {
         </div>
         <Form fluid onSubmit={handleWithdraw}>
           <Form.Group>
-            <Form.ControlLabel>
-              {withdrawCopy.amountToWithdraw}
-            </Form.ControlLabel>
+            <Form.ControlLabel>{copy.amountToWithdraw}</Form.ControlLabel>
             <InputNumber
               value={amount}
               onChange={setAmount}
@@ -65,7 +63,7 @@ const Withdraw = () => {
             size="lg"
             className="withdraw-button"
           >
-            {withdrawCopy.withdrawButton}
+            {copy.withdrawButton}
           </Button>
           <Button
             appearance="subtle"
@@ -74,7 +72,7 @@ const Withdraw = () => {
             onClick={() => navigate("/dashboard")}
             className="back-button"
           >
-            {withdrawCopy.backToDashboard}
+            {copy.backToDashboard}
           </Button>
         </Form>
       </Panel>

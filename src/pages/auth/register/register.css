@@ -1,0 +1,57 @@
+.register-container {
+  height: 100vh !important;
+  background: linear-gradient(to right, #2980b9, #6dd5fa) !important;
+}
+
+.register-panel {
+  padding: 40px !important;
+  width: 500px !important;
+  height: auto !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.register-title {
+  text-align: center !important;
+  margin-bottom: 40px !important;
+  color: #2c3e50 !important;
+  font-size: 32px !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+}
+
+.register-form-control {
+  width: 100% !important;
+}
+
+.register-button {
+  margin-top: 20px !important;
+  background: linear-gradient(to right, #3498db, #2980b9) !important;
+  color: white !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+  padding: 15px !important;
+  border-radius: 10px !important;
+  transition: all 0.3s ease !important;
+  box-shadow:
+    0 4px 6px rgba(50, 50, 93, 0.11),
+    0 1px 3px rgba(0, 0, 0, 0.08) !important;
+}
+
+.register-login-section {
+  text-align: center !important;
+  margin-top: 20px !important;
+}
+
+.register-login-text {
+  color: #34495e !important;
+}
+
+.register-login-button {
+  color: #3498db !important;
+  font-weight: bold !important;
+  margin-top: 10px !important;
+}

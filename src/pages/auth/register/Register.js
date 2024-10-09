@@ -1,7 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../../context/AuthContext";
 import { Button, FlexboxGrid, Form, Panel } from "rsuite";
+import "./register.css";
+
+const copy = {
+  title: "Register",
+  email: "Email",
+  password: "Password",
+  initialDeposit: "Initial Deposit ($)",
+  registerButton: "Register",
+  alreadyHaveAccount: "Already have an account?",
+  loginNow: "Login Now",
+  registrationSuccessful: "Registration successful!"
+};
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -13,7 +25,7 @@ const Register = () => {
   const handleRegister = () => {
     try {
       register(email, password, accountBalance);
-      alert("Registration successful!");
+      alert(copy.registrationSuccessful);
       navigate("/dashboard");
     } catch (error) {
       alert(error.message);
@@ -27,53 +39,23 @@ const Register = () => {
   }, [isAuthenticated, navigate]);
 
   return (
-    <FlexboxGrid
-      justify="center"
-      align="middle"
-      style={{
-        height: "100vh",
-        background: "linear-gradient(to right, #2980b9, #6dd5fa)"
-      }}
-    >
-      <Panel
-        bordered
-        style={{
-          padding: 40,
-          width: 500,
-          height: "auto",
-          borderRadius: 20,
-          boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
-          background: "rgba(255, 255, 255, 0.9)",
-          backdropFilter: "blur(10px)"
-        }}
-      >
-        <h2
-          style={{
-            textAlign: "center",
-            marginBottom: 40,
-            color: "#2c3e50",
-            fontSize: "32px",
-            fontWeight: "bold",
-            textTransform: "uppercase",
-            letterSpacing: "2px"
-          }}
-        >
-          Register
-        </h2>
+    <FlexboxGrid justify="center" align="middle" className="register-container">
+      <Panel bordered className="register-panel">
+        <h2 className="register-title">{copy.title}</h2>
         <Form fluid onSubmit={handleRegister}>
           <Form.Group controlId="email-1">
-            <Form.ControlLabel>Email</Form.ControlLabel>
+            <Form.ControlLabel>{copy.email}</Form.ControlLabel>
             <Form.Control
               name="email"
               type="email"
               value={email}
               onChange={setEmail}
               required
-              style={{ width: "100%" }}
+              className="register-form-control"
             />
           </Form.Group>
           <Form.Group controlId="password-1">
-            <Form.ControlLabel>Password</Form.ControlLabel>
+            <Form.ControlLabel>{copy.password}</Form.ControlLabel>
             <Form.Control
               name="password"
               type="password"
@@ -81,11 +63,11 @@ const Register = () => {
               value={password}
               onChange={setPassword}
               required
-              style={{ width: "100%" }}
+              className="register-form-control"
             />
           </Form.Group>
           <Form.Group controlId="account-balance-1">
-            <Form.ControlLabel>Initial Deposit ($)</Form.ControlLabel>
+            <Form.ControlLabel>{copy.initialDeposit}</Form.ControlLabel>
             <Form.Control
               name="accountBalance"
               type="number"
@@ -94,7 +76,7 @@ const Register = () => {
               min="10"
               step="0.01"
               required
-              style={{ width: "100%" }}
+              className="register-form-control"
             />
           </Form.Group>
           <Form.Group>
@@ -103,35 +85,17 @@ const Register = () => {
               type="submit"
               block
               size="lg"
-              style={{
-                marginTop: 20,
-                background: "linear-gradient(to right, #3498db, #2980b9)",
-                color: "white",
-                fontSize: "18px",
-                fontWeight: "bold",
-                padding: "15px",
-                borderRadius: "10px",
-                transition: "all 0.3s ease",
-                boxShadow:
-                  "0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08)"
-              }}
+              className="register-button"
             >
-              Register
+              {copy.registerButton}
             </Button>
           </Form.Group>
         </Form>
-        <div style={{ textAlign: "center", marginTop: "20px" }}>
-          <p style={{ color: "#34495e" }}>Already have an account?</p>
+        <div className="register-login-section">
+          <p className="register-login-text">{copy.alreadyHaveAccount}</p>
           <Link to="/login" style={{ textDecoration: "none" }}>
-            <Button
-              appearance="ghost"
-              style={{
-                color: "#3498db",
-                fontWeight: "bold",
-                marginTop: "10px"
-              }}
-            >
-              Login Now
+            <Button appearance="ghost" className="register-login-button">
+              {copy.loginNow}
             </Button>
           </Link>
         </div>

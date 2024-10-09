@@ -4,7 +4,7 @@ import { useBankAccount } from "../../../context/BankAccountContext";
 import { FlexboxGrid, Panel, Button, Form, InputNumber } from "rsuite";
 import "./deposit.css";
 
-const depositCopy = {
+const copy = {
   title: "Deposit",
   currentBalance: "Current Balance:",
   amountToDeposit: "Amount to Deposit",
@@ -21,20 +21,20 @@ const Deposit = () => {
 
   const handleDeposit = () => {
     if (amount <= 0) {
-      alert(depositCopy.invalidAmountAlert);
+      alert(copy.invalidAmountAlert);
       return;
     }
     deposit(amount);
-    alert(`${depositCopy.successAlert}${amount}`);
+    alert(`${copy.successAlert}${amount}`);
     navigate("/dashboard");
   };
 
   return (
     <FlexboxGrid justify="center" align="middle" className="deposit-container">
       <Panel bordered className="deposit-panel">
-        <h2 className="deposit-title">{depositCopy.title}</h2>
+        <h2 className="deposit-title">{copy.title}</h2>
         <div className="deposit-balance">
-          {depositCopy.currentBalance} ₱
+          {copy.currentBalance} ₱
           {accountBalance.toLocaleString("en-PH", {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2
@@ -42,7 +42,7 @@ const Deposit = () => {
         </div>
         <Form fluid onSubmit={handleDeposit}>
           <Form.Group>
-            <Form.ControlLabel>{depositCopy.amountToDeposit}</Form.ControlLabel>
+            <Form.ControlLabel>{copy.amountToDeposit}</Form.ControlLabel>
             <InputNumber
               value={amount}
               onChange={setAmount}
@@ -58,7 +58,7 @@ const Deposit = () => {
             size="lg"
             className="deposit-button"
           >
-            {depositCopy.depositButton}
+            {copy.depositButton}
           </Button>
           <Button
             appearance="subtle"
@@ -67,7 +67,7 @@ const Deposit = () => {
             onClick={() => navigate("/dashboard")}
             className="back-button"
           >
-            {depositCopy.backToDashboard}
+            {copy.backToDashboard}
           </Button>
         </Form>
       </Panel>

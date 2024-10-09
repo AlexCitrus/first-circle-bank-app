@@ -9,8 +9,8 @@ import {
   Routes,
   Navigate
 } from "react-router-dom";
-import Login from "./pages/auth/Login";
-import Register from "./pages/auth/Register";
+import Login from "./pages/auth/login/Login";
+import Register from "./pages/auth/register/Register";
 import SignOut from "./pages/auth/SignOut";
 import Dashboard from "./pages/dashboard/Dashboard"; // Import the actual Dashboard component
 import ProtectedRoute from "./pages/protected/ProtectedRoute";

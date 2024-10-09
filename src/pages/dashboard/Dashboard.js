@@ -10,7 +10,7 @@ import ExitIcon from "@rsuite/icons/Exit";
 
 import "./dashboard.css";
 
-const dashboardCopy = {
+const copy = {
   title: "Dashboard",
   welcome: "Welcome",
   currentBalance: "Current Balance:",
@@ -30,13 +30,13 @@ const Dashboard = () => {
       className="dashboard-container"
     >
       <Panel bordered className="dashboard-panel">
-        <h2 className="dashboard-title">{dashboardCopy.title}</h2>
+        <h2 className="dashboard-title">{copy.title}</h2>
         <p className="dashboard-welcome">
-          {dashboardCopy.welcome},{" "}
+          {copy.welcome},{" "}
           <span className="dashboard-welcome-name">{username}</span>!
         </p>
         <div className="dashboard-balance">
-          {dashboardCopy.currentBalance}{" "}
+          {copy.currentBalance}{" "}
           <span className="dashboard-balance-amount">
             ₱
             {accountBalance.toLocaleString("en-PH", {
@@ -54,8 +54,7 @@ const Dashboard = () => {
             to="/deposit"
             className="dashboard-button dashboard-button-deposit"
           >
-            <PlusIcon className="dashboard-button-icon" />{" "}
-            {dashboardCopy.deposit}
+            <PlusIcon className="dashboard-button-icon" /> {copy.deposit}
           </Button>
           <Button
             appearance="primary"
@@ -65,8 +64,7 @@ const Dashboard = () => {
             to="/withdraw"
             className="dashboard-button dashboard-button-withdraw"
           >
-            <MinusIcon className="dashboard-button-icon" />{" "}
-            {dashboardCopy.withdraw}
+            <MinusIcon className="dashboard-button-icon" /> {copy.withdraw}
           </Button>
           <Button
             appearance="primary"
@@ -76,8 +74,7 @@ const Dashboard = () => {
             to="/transfer"
             className="dashboard-button dashboard-button-transfer"
           >
-            <SplitIcon className="dashboard-button-icon" />{" "}
-            {dashboardCopy.transfer}
+            <SplitIcon className="dashboard-button-icon" /> {copy.transfer}
           </Button>
           <Button
             as={Link}
@@ -87,8 +84,7 @@ const Dashboard = () => {
             size="lg"
             className="dashboard-button-signout"
           >
-            <ExitIcon className="dashboard-button-icon" />{" "}
-            {dashboardCopy.signOut}
+            <ExitIcon className="dashboard-button-icon" /> {copy.signOut}
           </Button>
         </ButtonToolbar>
       </Panel>
