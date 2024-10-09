@@ -1,0 +1,101 @@
+.dashboard-container {
+  height: 100vh !important;
+  background: linear-gradient(to right, #2980b9, #6dd5fa) !important;
+}
+
+.dashboard-panel {
+  padding: 40px !important;
+  width: 500px !important;
+  height: auto !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.dashboard-title {
+  text-align: center !important;
+  margin-bottom: 40px !important;
+  color: #2c3e50 !important;
+  font-size: 32px !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+}
+
+.dashboard-welcome {
+  text-align: center !important;
+  margin-bottom: 24px !important;
+  font-size: 20px !important;
+  color: #34495e !important;
+  font-weight: 500 !important;
+}
+
+.dashboard-welcome-name {
+  font-weight: bold !important;
+  color: #3498db !important;
+}
+
+.dashboard-balance {
+  text-align: center !important;
+  font-size: 36px !important;
+  font-weight: bold !important;
+  margin-bottom: 50px !important;
+  padding: 30px !important;
+  background: linear-gradient(145deg, #f0f0f0, #ffffff) !important;
+  border-radius: 15px !important;
+  box-shadow:
+    10px 10px 20px #d1d1d1,
+    -10px -10px 20px #ffffff !important;
+  color: #2c3e50 !important;
+}
+
+.dashboard-balance-amount {
+  color: #27ae60 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+.dashboard-button-toolbar {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 25px !important;
+}
+
+.dashboard-button {
+  color: white !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+  padding: 15px !important;
+  border-radius: 10px !important;
+  transition: all 0.3s ease !important;
+  box-shadow:
+    0 4px 6px rgba(50, 50, 93, 0.11),
+    0 1px 3px rgba(0, 0, 0, 0.08) !important;
+}
+
+.dashboard-button-deposit {
+  background: linear-gradient(to right, #3498db, #2980b9) !important;
+}
+
+.dashboard-button-withdraw {
+  background: linear-gradient(to right, #e74c3c, #c0392b) !important;
+}
+
+.dashboard-button-transfer {
+  background: linear-gradient(to right, #f39c12, #d35400) !important;
+}
+
+.dashboard-button-signout {
+  margin-top: 30px !important;
+  color: #7f8c8d !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  padding: 12px !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+  border: 2px solid #7f8c8d !important;
+}
+
+.dashboard-button-icon {
+  margin-right: 15px !important;
+}

@@ -1,0 +1,58 @@
+.withdraw-container {
+  height: 100vh !important;
+  background: linear-gradient(to right, #2980b9, #6dd5fa) !important;
+}
+
+.withdraw-panel {
+  padding: 40px !important;
+  width: 500px !important;
+  height: auto !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.withdraw-title {
+  text-align: center !important;
+  margin-bottom: 40px !important;
+  color: #2c3e50 !important;
+  font-size: 32px !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+}
+
+.withdraw-balance {
+  text-align: center !important;
+  font-size: 24px !important;
+  font-weight: bold !important;
+  margin-bottom: 30px !important;
+  color: #2c3e50 !important;
+}
+
+.withdraw-input {
+  width: 100% !important;
+}
+
+.withdraw-button {
+  margin-top: 20px !important;
+  background: linear-gradient(to right, #e74c3c, #c0392b) !important;
+  color: white !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+  padding: 15px !important;
+  border-radius: 10px !important;
+  transition: all 0.3s ease !important;
+  box-shadow:
+    0 4px 6px rgba(50, 50, 93, 0.11),
+    0 1px 3px rgba(0, 0, 0, 0.08) !important;
+}
+
+.back-button {
+  margin-top: 10px !important;
+  color: #7f8c8d !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  padding: 12px !important;
+}

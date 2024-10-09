@@ -1,51 +1,54 @@
-import React from 'react';
-import { Button, CustomProvider, Container, Stack, Toggle } from 'rsuite';
-import { Icon } from '@rsuite/icons';
-import { FaMoon, FaSun } from 'react-icons/fa';
-import Logo from './Logo';
-import './App.css';
+import React from "react";
+import { CustomProvider, Container } from "rsuite";
 
-function App() {
-  const [theme, setTheme] = React.useState('dark');
-
-  const toggleTheme = checked => {
-    setTheme(checked ? 'light' : 'dark');
-  };
-
+import "./App.css";
+import { AuthProvider } from "./context/AuthContext";
+import {
+  Route,
+  BrowserRouter as Router,
+  Routes,
+  Navigate
+} from "react-router-dom";
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
+import SignOut from "./pages/auth/SignOut";
+import Dashboard from "./pages/dashboard/Dashboard"; // Import the actual Dashboard component
+import ProtectedRoute from "./pages/protected/ProtectedRoute";
+import { BankAccountProvider } from "./context/BankAccountContext";
+import Deposit from "./pages/bankActions/deposit/Deposit";
+import Withdraw from "./pages/bankActions/withdraw/Withdraw";
+import Transfer from "./pages/bankActions/transfer/Transfer";
+const App = () => {
   return (
-    <CustomProvider theme={theme}>
-      <Container className="app">
-        <header className="app-header">
-          <Logo />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-
-          <Toggle
-            checked={theme === 'light'}
-            checkedChildren={<Icon as={FaSun} style={{ fontSize: 16 }} />}
-            unCheckedChildren={<Icon as={FaMoon} style={{ fontSize: 16 }} />}
-            onChange={toggleTheme}
-          />
-
-          <Stack spacing={10}>
-            <Button
-              appearance="primary"
-              href="https://rsuitejs.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React Suite
-            </Button>
-
-            <Button href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-              Learn React
-            </Button>
-          </Stack>
-        </header>
-      </Container>
-    </CustomProvider>
+    <AuthProvider>
+      <BankAccountProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Navigate to="/login" />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/signout" element={<SignOut />} />
+            <Route
+              path="/deposit"
+              element={<ProtectedRoute element={<Deposit />} />}
+            />
+            <Route
+              path="/withdraw"
+              element={<ProtectedRoute element={<Withdraw />} />}
+            />
+            <Route
+              path="/transfer"
+              element={<ProtectedRoute element={<Transfer />} />}
+            />
+            <Route
+              path="/dashboard"
+              element={<ProtectedRoute element={<Dashboard />} />}
+            />
+          </Routes>
+        </Router>
+      </BankAccountProvider>
+    </AuthProvider>
   );
-}
+};
 
 export default App;
