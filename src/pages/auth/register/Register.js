@@ -8,7 +8,7 @@ const copy = {
   title: "Register",
   email: "Email",
   password: "Password",
-  initialDeposit: "Initial Deposit ($)",
+  initialDeposit: "Initial Deposit (₱)",
   registerButton: "Register",
   alreadyHaveAccount: "Already have an account?",
   loginNow: "Login Now",
